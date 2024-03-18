@@ -10,6 +10,7 @@ import com.a303.missionms.domain.mission.dto.response.MissionBaseRes;
 import com.a303.missionms.domain.mission.dto.response.MissionListRes;
 import com.a303.missionms.domain.mission.repository.MissionRepository;
 import com.a303.missionms.global.exception.BaseExceptionHandler;
+import com.a303.missionms.global.exception.code.ErrorCode;
 import jakarta.persistence.criteria.CriteriaBuilder.In;
 import jakarta.transaction.Transactional;
 import java.io.IOException;
@@ -112,5 +113,21 @@ public class DailyMissionServiceImpl implements DailyMissionService {
 		}
 
 		return myTableMissionDTOList;
+	}
+
+	@Override
+	public int completeMission(int memberId, int missionId)
+		throws BaseExceptionHandler, IOException {
+
+		DailyMission dailyMission = dailyMissionRepository.findByMemberIdAndMission_MissionId(
+			memberId, missionId).orElseThrow(
+			() -> new BaseExceptionHandler(
+				"해당 멤버:" + memberId + " mission: " + missionId + "의 레코드가 없습니다.",
+				ErrorCode.NOT_FOUND_ERROR)
+		);
+
+		dailyMission.setFinish(true);
+
+		return dailyMission.getDailyMissionId();
 	}
 }

@@ -15,4 +15,7 @@ public interface DailyMissionService {
 	List<MyTableMissionDTO> getMyTableMissions(int memberId)
 		throws BaseExceptionHandler, IOException;
 
+	int completeMission(int memberId, int missionId) throws BaseExceptionHandler, IOException;
+
+
 }

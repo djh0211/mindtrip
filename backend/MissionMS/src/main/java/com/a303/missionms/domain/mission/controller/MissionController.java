@@ -15,10 +15,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -62,7 +65,7 @@ public class MissionController {
 		return BaseResponse.success(SuccessCode.INSERT_SUCCESS, myTableMissionDTOList);
 	}
 
-	//    @Operation(summary = "마이테이블관리")
+	//    @Operation(summary = "마이테이블조회")
 	@GetMapping("/v1/mytable")
 	public ResponseEntity<BaseResponse<List<MyTableMissionDTO>>> putMyTableMissions(
 		@RequestHeader("x-member-id") int memberId) throws IOException {
@@ -71,6 +74,18 @@ public class MissionController {
 			memberId);
 
 		return BaseResponse.success(SuccessCode.INSERT_SUCCESS, myTableMissionDTOList);
+	}
+
+	//    @Operation(summary = "미션완료변경") TODO 캐시 및 배치 업데이트로 최적화 필요
+	@PostMapping("/v1/mytable/{missionId}")
+	public ResponseEntity<BaseResponse<Integer>> completeMission(
+		@RequestHeader("x-member-id") int memberId,
+		@PathVariable("missionId") int missionId) throws IOException {
+
+
+		int dailyMissionId = dailyMissionService.completeMission(memberId, missionId);
+
+		return BaseResponse.success(SuccessCode.INSERT_SUCCESS, dailyMissionId);
 	}
 
 }
