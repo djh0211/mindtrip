@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/channels/v1")
 @RequiredArgsConstructor
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class ChannelController {
 
     private final ChannelService channelService;
@@ -35,7 +35,7 @@ public class ChannelController {
     //고민상담소 입장(채팅방 생성)
     @PostMapping("/enter/{consultId}")
     @Transactional
-    public ResponseEntity<BaseResponse<String>> enterConsultRoom(
+    public ResponseEntity<BaseResponse<String>> registerPersonalChat(
         @PathVariable int consultId,
         @RequestBody PersonalChatReq personalChatReq,
         @RequestHeader("x-member-id") int memberId

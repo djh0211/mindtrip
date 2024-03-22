@@ -8,15 +8,17 @@ import com.a303.consultms.global.client.MemberClient;
 import java.io.IOException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Controller
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*", allowCredentials = "true")
+@CrossOrigin(origins = "*")
 @Slf4j
 public class StompChannelController {
 
@@ -44,4 +46,15 @@ public class StompChannelController {
 
         template.convertAndSend("/sub/" + channelId, message);
     }
+
+
+//    @Value("${server.port}")
+//    private String port = "8000";
+//
+//    @MessageMapping("/incoming")
+//    @SendTo("/topic/outgoing")
+//    public String incoming(Message message) {
+////        LOGGER.info(String.format("received message: %s", message));
+//        return String.format("Application on port %s responded to your message: \"%s\"", port, message);
+//    }
 }
