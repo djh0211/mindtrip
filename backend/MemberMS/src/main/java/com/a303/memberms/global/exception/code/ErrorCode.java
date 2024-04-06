@@ -104,6 +104,9 @@ public enum ErrorCode {
     // Transaction Delete Error
     DELETE_ERROR(200, "B400", "Delete Transaction Error Exception"),
 
+    // Circuit Error
+    CIRCUIT_ERROR(500, "B900", "현재 서킷브레이커 실행으로 서비스 불가입니다."),
+
     ; // End
 
     /**

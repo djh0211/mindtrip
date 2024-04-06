@@ -33,5 +33,6 @@ public interface MemberService {
 
 	MemberBaseRes changeNickname(int memberId, String nickname);
 
+	void backupMemberScheduling();
 
 }

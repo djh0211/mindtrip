@@ -7,7 +7,9 @@ import com.a303.memberms.domain.member.dto.request.MemberStandardRegisterReq;
 import com.a303.memberms.domain.member.dto.response.MemberBaseRes;
 
 import com.a303.memberms.domain.member.dto.response.MemberLoginRes;
+import com.a303.memberms.domain.member.repository.MemberBulkRepository;
 import com.a303.memberms.domain.member.repository.MemberRepository;
+import com.a303.memberms.domain.memberBackup.repository.MemberBackupRepository;
 import com.a303.memberms.domain.notification.dto.response.NotificationEventDto;
 import com.a303.memberms.domain.village.dto.response.VillageBaseRes;
 import com.a303.memberms.global.api.response.BaseResponse;
@@ -19,6 +21,7 @@ import com.a303.memberms.global.exception.BaseExceptionHandler;
 import com.a303.memberms.global.exception.code.ErrorCode;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import jakarta.transaction.Transactional;
 import java.io.IOException;
 import java.util.HashMap;
@@ -38,12 +41,13 @@ import org.springframework.stereotype.Service;
 public class MemberServiceImpl implements MemberService {
 
 	private final MemberRepository memberRepository;
+	private final MemberBackupRepository memberBackupRepository;
 	private final PasswordEncoder passwordEncoder;
 
 	private final AuthClient authClient;
 	private final VillageClient villageClient;
 
-
+	private final MemberBulkRepository memberBulkRepository;
 
 	@Override
 	public MemberBaseRes getMemberByMemberId(int memberId)
@@ -182,8 +186,16 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
+	@CircuitBreaker(name="customCircuitBreaker", fallbackMethod = "incorrectMissionCount")
 	@Override
 	public int getMissionCount(int memberId) {
+
+		try {
+			Thread.sleep(4000L);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+
 		return memberRepository.findMissionCountByMemberId(memberId);
 	}
 
@@ -220,5 +232,22 @@ public class MemberServiceImpl implements MemberService {
 			.build();
 	}
 
+	@Override
+	@CircuitBreaker(name="customCircuitBreaker", fallbackMethod = "schedulingFallback")
+	public void backupMemberScheduling() {
+		memberBulkRepository.deleteAllMemberBackup();
+		memberBulkRepository.copyToMemberBackup();
+	}
+
+	//	------------------------ fallback ------------------------
+	int incorrectMissionCount(int memberId, Exception e) {
+//		log.error("fallback run {}",memberId);
+		return memberBackupRepository.findMissionCountByMemberId(memberId);
+
+	}
+
+	public void schedulingFallback(Exception e){
+		log.info("circuit 실행 : scheduling method 생략");
+	}
 
 }

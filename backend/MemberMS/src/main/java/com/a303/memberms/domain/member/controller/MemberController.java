@@ -35,6 +35,7 @@ public class MemberController {
 
 	//    @Operation(summary = "health check")
 
+	// TODO : 서킷시 비정확
 	@GetMapping("/v1/mission-count")
 	public ResponseEntity<BaseResponse<Integer>> getMissionCount(
 		@RequestHeader("x-member-id") int memberId
@@ -49,6 +50,7 @@ public class MemberController {
 		return BaseResponse.success(SuccessCode.CHECK_SUCCESS, count);
 	}
 
+	// TODO : 서킷시 불가
 	@PutMapping("/v1/nickname")
 	public ResponseEntity<BaseResponse<MemberBaseRes>> changeNickname(
 		@RequestHeader("x-member-id") int memberId,
@@ -67,6 +69,7 @@ public class MemberController {
 
 	//------------------------- 다른 msa와 통신 -------------------------------
 	//    @Operation(summary = "멤버아이디로 멤버 조회")
+	// TODO : 서킷시 예비
 	@GetMapping("/v0/{memberId}")
 	public ResponseEntity<BaseResponse<MemberBaseRes>> getMemberDtoByMemberId(
 		@PathVariable("memberId") int memberId
@@ -77,6 +80,7 @@ public class MemberController {
 		return BaseResponse.success(SuccessCode.CHECK_SUCCESS, memberBaseRes);
 	}
 
+	// TODO : 서킷시 예비
 	@GetMapping("/v0/id-list")
 	public ResponseEntity<BaseResponse<List<Integer>>> getMemberIdList() throws IOException {
 
@@ -85,6 +89,7 @@ public class MemberController {
 		return BaseResponse.success(SuccessCode.CHECK_SUCCESS, memberIdList);
 	}
 
+	// TODO : 서킷시 예비
 	@PostMapping("/v0/login")
 	public ResponseEntity<BaseResponse<MemberLoginRes>> login(
 		@RequestBody
@@ -102,6 +107,7 @@ public class MemberController {
 		);
 	}
 
+	// TODO : 서킷시 불가
 	@PostMapping("/v0/register")
 	public ResponseEntity<BaseResponse<Integer>> register(
 		@RequestBody
@@ -117,6 +123,7 @@ public class MemberController {
 		);
 	}
 
+	// TODO : 서킷시 불가
 	@GetMapping("/v0/availability/id")
 	public ResponseEntity<BaseResponse<String>> checkIdAvailability(
 		@RequestParam
@@ -130,7 +137,7 @@ public class MemberController {
 		);
 	}
 
-
+	// TODO : 서킷시 불가
 	@GetMapping("/v0/availability/nickname")
 	public ResponseEntity<BaseResponse<String>> checkNicknameAvailability(
 		@RequestParam
@@ -144,7 +151,7 @@ public class MemberController {
 		);
 	}
 
-
+	// TODO : 서킷시 불가
 	@PutMapping("/v0/mission-count")
 	public ResponseEntity<BaseResponse<String>> increaseMissionCount(
 		@RequestParam("memberId") int memberId
