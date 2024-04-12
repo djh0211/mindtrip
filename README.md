@@ -43,6 +43,25 @@
 
 ### 초기 화면
 
+<<<<<<< HEAD
+<img alt="초기 화면" src="https://github.com/ss0510s/mindtrip/assets/77006790/b7205431-b1da-435a-ace1-91e92e41ae51" height="400">
+
+### HTP 검사
+
+<img alt="HTP 검사" src="https://github.com/ss0510s/mindtrip/assets/77006790/c1bb795d-d4a3-4a94-bcd9-6f3493ce23c2" height="400" >
+
+### 메인 화면
+
+<img alt="메인화면" src="https://github.com/ss0510s/mindtrip/assets/77006790/9c3ae5ac-ccea-4769-a074-1905602b7115" height="400" >
+
+### 데일리 미션
+
+<img alt="데일리 미션" src="https://github.com/ss0510s/mindtrip/assets/77006790/2ebc6962-dcaa-46e2-ac7c-092a1c7df148" height="400" >
+
+### 고민 상담소
+
+<img alt="고민 상담소" src="https://github.com/ss0510s/mindtrip/assets/77006790/3af9d009-f6f1-47d5-ab79-bb04ee535a76" height="400" >
+=======
 <img alt="초기 화면" src="https://github.com/ss0510s/mindtrip/assets/77006790/c60d5df1-54ab-43ca-9ef1-ad0825d9e7f7" height="400">
 
 ### HTP 검사
@@ -60,6 +79,7 @@
 ### 고민 상담소
 
 <img alt="고민 상담소" src="https://github.com/ss0510s/mindtrip/assets/77006790/11e2456e-6940-44ac-bca8-f25a3584db06" height="400" >
+>>>>>>> cfbd0f5522117d9e8c1e1a871ea239b54840506a
 
 ### 포스트잇 커뮤니티
 
@@ -67,7 +87,11 @@
 
 ### 마이페이지
 
+<<<<<<< HEAD
+<img alt="마이페이지" src="https://github.com/ss0510s/mindtrip/assets/77006790/b5fe6f7a-d016-4ec1-ac2e-01ed11cc5bfb" height="400">
+=======
 <img alt="마이페이지" src="https://github.com/ss0510s/mindtrip/assets/77006790/95d78257-88e6-4fa4-b30c-5b1cd5ad4fdc" height="400">
+>>>>>>> cfbd0f5522117d9e8c1e1a871ea239b54840506a
 
 
 ### 알람
@@ -125,9 +149,15 @@ redux에 저장된 사용자 마을 타입과 tailwindCSS를 이용해 적용했
 
 > Blender를 사용하여 만든 3D glb 파일을 웹에서 렌더링하기 위해 three.js와 react three fiber(r3f)를 사용했습니다. 이를 통해 사용자는 메인 화면에서 확대, 이동, 회전 등의 상호작용을 할 수 있습니다. 또한, 용량이 큰 3D 파일을 로딩할 때 사용자의 불편함을 최소화하기 위해 lazy loading을 적용하여, 파일이 렌더링 중일 때에는 다른 화면이 표시되도록 했습니다.
 
+<<<<<<< HEAD
+<img src="https://github.com/ss0510s/mindtrip/assets/77006790/c60d5df1-54ab-43ca-9ef1-ad0825d9e7f7" height="400">
+
+<img src="https://github.com/ss0510s/mindtrip/assets/77006790/f8a2e034-7092-4527-a6e1-6d02fb63897d" height="300">
+=======
 <img src="https://github.com/ss0510s/mindtrip/assets/77006790/7d36921d-9cc9-4151-9c86-7e40d7222f1c" height="400">
 
 <img src="https://github.com/ss0510s/mindtrip/assets/77006790/2971f677-9e8c-4819-9019-2a8f15831f9f" height="300">
+>>>>>>> cfbd0f5522117d9e8c1e1a871ea239b54840506a
 
 ### AI
 
