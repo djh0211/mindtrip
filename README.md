@@ -43,7 +43,6 @@
 
 ### 초기 화면
 
-<<<<<<< HEAD
 <img alt="초기 화면" src="https://github.com/ss0510s/mindtrip/assets/77006790/b7205431-b1da-435a-ace1-91e92e41ae51" height="400">
 
 ### HTP 검사
@@ -68,12 +67,7 @@
 
 ### 마이페이지
 
-<<<<<<< HEAD
 <img alt="마이페이지" src="https://github.com/ss0510s/mindtrip/assets/77006790/b5fe6f7a-d016-4ec1-ac2e-01ed11cc5bfb" height="400">
-=======
-<img alt="마이페이지" src="https://github.com/ss0510s/mindtrip/assets/77006790/95d78257-88e6-4fa4-b30c-5b1cd5ad4fdc" height="400">
->>>>>>> cfbd0f5522117d9e8c1e1a871ea239b54840506a
-
 
 ### 알람
 
@@ -130,15 +124,9 @@ redux에 저장된 사용자 마을 타입과 tailwindCSS를 이용해 적용했
 
 > Blender를 사용하여 만든 3D glb 파일을 웹에서 렌더링하기 위해 three.js와 react three fiber(r3f)를 사용했습니다. 이를 통해 사용자는 메인 화면에서 확대, 이동, 회전 등의 상호작용을 할 수 있습니다. 또한, 용량이 큰 3D 파일을 로딩할 때 사용자의 불편함을 최소화하기 위해 lazy loading을 적용하여, 파일이 렌더링 중일 때에는 다른 화면이 표시되도록 했습니다.
 
-<<<<<<< HEAD
 <img src="https://github.com/ss0510s/mindtrip/assets/77006790/c60d5df1-54ab-43ca-9ef1-ad0825d9e7f7" height="400">
 
 <img src="https://github.com/ss0510s/mindtrip/assets/77006790/f8a2e034-7092-4527-a6e1-6d02fb63897d" height="300">
-=======
-<img src="https://github.com/ss0510s/mindtrip/assets/77006790/7d36921d-9cc9-4151-9c86-7e40d7222f1c" height="400">
-
-<img src="https://github.com/ss0510s/mindtrip/assets/77006790/2971f677-9e8c-4819-9019-2a8f15831f9f" height="300">
->>>>>>> cfbd0f5522117d9e8c1e1a871ea239b54840506a
 
 ### AI
 
