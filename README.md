@@ -61,25 +61,6 @@
 ### 고민 상담소
 
 <img alt="고민 상담소" src="https://github.com/ss0510s/mindtrip/assets/77006790/3af9d009-f6f1-47d5-ab79-bb04ee535a76" height="400" >
-=======
-<img alt="초기 화면" src="https://github.com/ss0510s/mindtrip/assets/77006790/c60d5df1-54ab-43ca-9ef1-ad0825d9e7f7" height="400">
-
-### HTP 검사
-
-<img alt="HTP 검사" src="https://github.com/ss0510s/mindtrip/assets/77006790/bb6f05b1-c356-4544-8fda-38a5a383cd90" height="400" >
-
-### 메인 화면
-
-<img alt="메인화면" src="https://github.com/ss0510s/mindtrip/assets/77006790/9df38219-2cc7-45f3-8c11-5bc1a335ce97" height="400" >
-
-### 데일리 미션
-
-<img alt="데일리 미션" src="https://github.com/ss0510s/mindtrip/assets/77006790/06f242bc-a024-492d-9cd9-8ffc66e10fd4" height="400" >
-
-### 고민 상담소
-
-<img alt="고민 상담소" src="https://github.com/ss0510s/mindtrip/assets/77006790/11e2456e-6940-44ac-bca8-f25a3584db06" height="400" >
->>>>>>> cfbd0f5522117d9e8c1e1a871ea239b54840506a
 
 ### 포스트잇 커뮤니티
 
